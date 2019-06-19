@@ -43,7 +43,7 @@ public class BlockController {
             blockListDTO.setBlockhash(jsonObject.getString("hash"));
             blockListDTO.setHeight(jsonObject.getInteger("height"));
             Long time = jsonObject.getLong("time");
-            blockListDTO.setTime(new Date(1000*time));
+            blockListDTO.setTime(new Date(1000*time).getTime());
             blockListDTO.setTxsize(jsonObject.getShort("nTx"));
             //todo
             blockListDTO.setSize(null);

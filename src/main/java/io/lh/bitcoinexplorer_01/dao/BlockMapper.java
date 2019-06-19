@@ -2,6 +2,8 @@ package io.lh.bitcoinexplorer_01.dao;
 
 import io.lh.bitcoinexplorer_01.po.Block;
 
+import java.util.List;
+
 public interface BlockMapper {
     int deleteByPrimaryKey(String blockhash);
 
@@ -14,4 +16,6 @@ public interface BlockMapper {
     int updateByPrimaryKeySelective(Block record);
 
     int updateByPrimaryKey(Block record);
+
+    List<Block> selectRecentBlocks();
 }

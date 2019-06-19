@@ -1,13 +1,11 @@
 package io.lh.bitcoinexplorer_01.dto;
 
-import java.util.Date;
-
 public class BlockListDTO {
     private String blockhash;
 
     private Integer height;
 
-    private Date time;
+    private long time;
 
     private Short txsize;
 
@@ -29,11 +27,11 @@ public class BlockListDTO {
         this.height = height;
     }
 
-    public Date getTime() {
+    public long getTime() {
         return time;
     }
 
-    public void setTime(Date time) {
+    public void setTime(long time) {
         this.time = time;
     }
 
