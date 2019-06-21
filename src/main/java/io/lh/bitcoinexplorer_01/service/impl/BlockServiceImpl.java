@@ -5,10 +5,12 @@ import io.lh.bitcoinexplorer_01.dto.BlockListDTO;
 import io.lh.bitcoinexplorer_01.po.Block;
 import io.lh.bitcoinexplorer_01.service.BlockService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class BlockServiceImpl implements BlockService {
     @Autowired
     private BlockMapper blockMapper;

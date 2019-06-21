@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import io.lh.bitcoinexplorer_01.api.BitcoinJsonRpcApi;
 import io.lh.bitcoinexplorer_01.api.BitcoinRestApi;
 import io.lh.bitcoinexplorer_01.dao.BlockMapper;
+import io.lh.bitcoinexplorer_01.service.BitcoinService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.scheduling.annotation.EnableScheduling;
@@ -23,6 +24,9 @@ public class TempController {
     @Autowired
     private BlockMapper blockMapper;
 
+    @Autowired
+    private BitcoinService bitcoinService;
+
     @GetMapping("/test")
     public String test() throws Throwable {
         //JSONObject mempoolInfo = bitcoinRestApi.getMempoolInfo();
@@ -34,10 +38,8 @@ public class TempController {
         //JSONObject blockchainInfo = bitcoinJsonRpcApi.getBlockchainInfo();
 //        JSONObject block = bitcoinRestApi.getBlock("000000000933ea01ad0ee984209779baaec3ced90fa3f408719526f8d77f4943");
 //        while (block){
-//
-//        }
-
-
+        String tempBlockhash = "00000000000003d54baf5438615636d5ea94cc04068e9f06d2ade4128dde1688";
+        bitcoinService.syncBlockchainFromHash(tempBlockhash);
         return null;
-    }
+       }
 }

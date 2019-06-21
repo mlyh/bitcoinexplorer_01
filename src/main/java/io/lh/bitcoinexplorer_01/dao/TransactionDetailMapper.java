@@ -1,6 +1,7 @@
 package io.lh.bitcoinexplorer_01.dao;
 
 import io.lh.bitcoinexplorer_01.po.TransactionDetail;
+import org.apache.ibatis.annotations.Param;
 
 public interface TransactionDetailMapper {
     int deleteByPrimaryKey(Long txDetailId);
@@ -14,4 +15,6 @@ public interface TransactionDetailMapper {
     int updateByPrimaryKeySelective(TransactionDetail record);
 
     int updateByPrimaryKey(TransactionDetail record);
+    //    custom
+    Double getBalance(@Param("address")String address);
 }
