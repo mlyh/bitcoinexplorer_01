@@ -18,4 +18,6 @@ public interface BlockMapper {
     int updateByPrimaryKey(Block record);
 
     List<Block> selectRecentBlocks();
+
+    Block getBlockByHeight(Integer height);
 }

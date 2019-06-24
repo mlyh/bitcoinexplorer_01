@@ -5,6 +5,7 @@ import io.lh.bitcoinexplorer_01.api.BitcoinJsonRpcApi;
 import io.lh.bitcoinexplorer_01.api.BitcoinRestApi;
 import io.lh.bitcoinexplorer_01.dto.BlockGetDTO;
 import io.lh.bitcoinexplorer_01.dto.BlockListDTO;
+import io.lh.bitcoinexplorer_01.po.Block;
 import io.lh.bitcoinexplorer_01.service.BitcoinService;
 import io.lh.bitcoinexplorer_01.service.BlockService;
 import io.lh.bitcoinexplorer_01.service.impl.BitcoinServiceImpl;
@@ -30,16 +31,10 @@ public class BlockController {
         return recentBlocks;
     }
 
+    @GetMapping("/getByHeight")
+    public Block getByHeight(Integer height) {
+        Block block = blockService.getBlockByHeight(height);
+        return block;
+    }
 
-
-
-
-
-
-//    @GetMapping("/getByHeight")
-//    public BlockGetDTO getByHeight(@RequestParam Integer height) {
-//        BlockGetDTO blockGetDTO = new BlockGetDTO();
-//
-//        return blockGetDTO;
-//    }
 }

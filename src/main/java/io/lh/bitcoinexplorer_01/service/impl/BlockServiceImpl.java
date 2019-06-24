@@ -33,4 +33,10 @@ public class BlockServiceImpl implements BlockService {
 
         return blockListDTOS;
     }
+
+    @Override
+    public Block getBlockByHeight(Integer height) {
+        Block block = blockMapper.getBlockByHeight(height);
+        return block;
+    }
 }

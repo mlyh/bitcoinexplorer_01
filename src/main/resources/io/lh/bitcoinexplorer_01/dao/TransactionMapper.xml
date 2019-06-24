@@ -114,4 +114,19 @@
       confirmations = #{confirmations,jdbcType=INTEGER}
     where txhash = #{txhash,jdbcType=CHAR}
   </update>
+<!--  custom-->
+  <select id="getRecentTransactionList" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from transaction
+    order by txhash desc
+    limit 5
+  </select>
+<!--  getTransactionByHash-->
+  <select id="getTransactionByHash" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from transaction
+    where txhash = #{txhash,jdbcType=CHAR}
+  </select>
 </mapper>

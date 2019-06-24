@@ -1,13 +1,11 @@
 package io.lh.bitcoinexplorer_01.controller;
 
-import com.alibaba.fastjson.JSONObject;
 import io.lh.bitcoinexplorer_01.api.BitcoinJsonRpcApi;
 import io.lh.bitcoinexplorer_01.api.BitcoinRestApi;
 import io.lh.bitcoinexplorer_01.dao.BlockMapper;
 import io.lh.bitcoinexplorer_01.service.BitcoinService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
